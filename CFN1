@@ -1,0 +1,75 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "AWS CloudFormation Template for creating workshop foundation resources",
+
+    "Resources": {
+        "wrkshpbackendRepo":{
+          "Type":"AWS::CodeCommit::Repository",
+          "Properties":{
+            "RepositoryName": "awswrkshp-aut-backend",
+            "RepositoryDescription":"CodeCommit Repository awswrkshp-aut-backend"
+          }
+        },
+        "wrkshpfrontendRepo":{
+          "Type":"AWS::CodeCommit::Repository",
+          "Properties":{
+            "RepositoryName": "awswrkshp-aut-frontend",
+            "RepositoryDescription":"CodeCommit Repository awswrkshp-aut-frontend"
+          }
+        },
+        "wrkshpfunctionalAssuranceRepo":{
+          "Type":"AWS::CodeCommit::Repository",
+          "Properties":{
+            "RepositoryName": "awswrkshp-functional-assurance",
+            "RepositoryDescription":"CodeCommit Repository awswrkshp-functional-assurance"
+          }
+        },
+        "wrkshpAccessibilityTestsRepo":{
+          "Type":"AWS::CodeCommit::Repository",
+          "Properties":{
+            "RepositoryName": "awswrkshp-tests-accessibility",
+            "RepositoryDescription":"CodeCommit Repository awswrkshp-tests-accessibility"
+          }
+        },
+        "wrkshpPerformanceTestsRepo":{
+          "Type":"AWS::CodeCommit::Repository",
+          "Properties":{
+            "RepositoryName": "awswrkshp-tests-performance",
+            "RepositoryDescription":"CodeCommit Repository awswrkshp-tests-performance"
+          }
+        },
+        "wrkshpSecurityTestsRepo":{
+          "Type":"AWS::CodeCommit::Repository",
+          "Properties":{
+            "RepositoryName": "awswrkshp-tests-security",
+            "RepositoryDescription":"CodeCommit Repository awswrkshp-tests-security"
+          }
+        }
+    },
+    "Outputs": {
+        "wrkshpbackendRepo" : {     
+            "Value": {"Fn::GetAtt": ["wrkshpbackendRepo", "CloneUrlHttp"] },
+            "Export" : { "Name" : "wrkshpbackendRepo"}
+        },      
+        "wrkshpfrontendRepo" : {        
+            "Value": {"Fn::GetAtt": ["wrkshpfrontendRepo", "CloneUrlHttp"] },
+            "Export" : { "Name" : "wrkshpfrontendRepo"}
+        },      
+        "wrkshpfunctionalAssuranceRepo" : {     
+            "Value": {"Fn::GetAtt": ["wrkshpfunctionalAssuranceRepo", "CloneUrlHttp"] },
+            "Export" : { "Name" : "wrkshpfunctionalAssuranceRepo"}
+        },      
+        "wrkshpAccessibilityTestsRepo" : {      
+            "Value": {"Fn::GetAtt": ["wrkshpAccessibilityTestsRepo", "CloneUrlHttp"] },
+            "Export" : { "Name" : "wrkshpAccessibilityTestsRepo"}
+        },      
+        "wrkshpPerformanceTestsRepo" : {        
+            "Value": {"Fn::GetAtt": ["wrkshpPerformanceTestsRepo", "CloneUrlHttp"] },
+            "Export" : { "Name" : "wrkshpPerformanceTestsRepo"}
+        },      
+        "wrkshpSecurityTestsRepo" : {       
+            "Value": {"Fn::GetAtt": ["wrkshpSecurityTestsRepo", "CloneUrlHttp"] },
+            "Export" : { "Name" : "wrkshpSecurityTestsRepo"}
+        }
+    }
+}
