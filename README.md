@@ -7,7 +7,7 @@
                 - Enter Delivery Details
                 - Checkout
                 - Payment
-    # UI Will be rendered based on the responses from Microservices. 3 Microservices are available
+    # UI Will be rendered based on the responses from Microservices. 3 Microservices are available.
                 - Catalogues and Products <Helps with Product searches>
                 - Customer - Registration and Login
                 - Image Services
